@@ -1,0 +1,17 @@
+﻿<Window x:Class="XAMLileVeriBaglama.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:XAMLileVeriBaglama"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <TextBox Name="txt1" Margin="25,25,25,200" Background="Azure" />
+        <TextBox Name="txt2" Margin="25,150,355,100" Background="Azure" Text="{Binding ElementName=txt1, Path=Text}"/>
+        <TextBox x:Name="txt3" Margin="190,150,190,100" Background="Azure" Text="{Binding ElementName=txt1 , Path=Text}"/>
+        <TextBox x:Name="txt4" Margin="355,150,25,100" Background="Azure" Text="{Binding  ElementName=txt1 , Path=Text.Length, Mode=OneWay}"/>
+        <!--son textimiz karakterlerin uzunluğunu getirecek olan txt oneway olmadan uzunluk bulunmaz çünkü veri okuma ve veri yazma işlemlerini karıştırabilir wpf-->
+
+    </Grid>
+</Window>
